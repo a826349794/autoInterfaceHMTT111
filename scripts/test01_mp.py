@@ -21,6 +21,8 @@ class TestMp:
     def test01_mp_login(self, mobile, code):
         # 调用登录接口
         r = self.mp.api_mp_login(mobile, code)
+        print("状态码为:",r.status_code)
+        print(r.json())
         try:
             # 提取token
             Tool.common_token(r)
